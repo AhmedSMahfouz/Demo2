@@ -1,0 +1,66 @@
+﻿@model HomePageNewsItemsModel
+@using Nop.Web.Models.News;
+@if (Model.NewsItems.Count > 0)
+{
+    @*<div class="news-list-homepage ">
+        <div class="title">
+            <strong>@T("News")</strong>
+        </div>
+        <div class="news-items">
+            @foreach (var item in Model.NewsItems)
+            {
+                <div class="news-item">
+                    <div class="news-head">
+                        <a class="news-title" href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })">@item.Title</a>
+                        <span class="news-date">-@item.CreatedOn.ToString("D")</span>
+                    </div>
+                    <div class="news-body">
+                        @Html.Raw(item.Short)
+                    </div>
+                    <div class="buttons">
+                        <a href="@Url.RouteUrl("NewsItem", new { SeName = item.SeName })" class="read-more">@T("News.MoreInfo")</a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="view-all">
+            <a href="@Url.RouteUrl("NewsArchive")">@T("News.ViewAll")</a>
+        </div>
+    </div>*@
+<div class="container container-news ">
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Hello, world!</h1>
+        <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg d-block mx-auto" href="#" role="button" style="width:144px;">Learn more</a>
+        </p>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Hello, world!</h1>
+        <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg d-block mx-auto" href="#" role="button" style="width:144px;">Learn more</a>
+        </p>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Hello, world!</h1>
+        <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg d-block mx-auto" href="#" role="button" style="width:144px;">Learn more</a>
+        </p>
+    </div>
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Hello, world!</h1>
+        <p class="lead text-center">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4 text-center">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg d-block mx-auto" href="#" role="button" style="width:144px;">Learn more</a>
+        </p>
+    </div>
+</div>
+
+
+}

@@ -1,0 +1,28 @@
+﻿<div class="header container-fluid">
+    @Html.Widget("header")
+    <div class="container-fluid p-0">
+        <div class="img-container">
+            <img src="https://cdn.autodoc.de/uploads/construct_banner/4330/atd/22712/banner_image__en.jpg" alt="offer" class="img" />
+        </div>
+    </div>
+    <div>
+        <h1 class="header-logoo"><strong class="text-uppercase text-white">Spare</strong><strong class="text-uppercase" style="color:#f37c2e;">Parts</strong></h1>
+    </div>
+    <div class="header-upper   pt-0 pl-3 pr-3 pb-3 d-flex">
+        @*<div class="header-selectors-wrapper">
+            @Html.Action("TaxTypeSelector", "Common")
+            @Html.Action("CurrencySelector", "Common")
+            @Html.Action("LanguageSelector", "Common")
+            @Html.Widget("header_selectors")
+        </div>*@
+        <div class="header-links-wrapper mx-auto">
+            @Html.Action("HeaderLinks", "Common")
+            @Html.Action("FlyoutShoppingCart", "ShoppingCart")
+        </div>
+    </div>
+    <div class="header-lower pt-0 pl-3 pr-3 pb-3">
+        <div class="search-box store-search-box">
+            @Html.Action("SearchBox", "Catalog")
+        </div>
+    </div>
+</div>

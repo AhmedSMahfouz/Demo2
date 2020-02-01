@@ -1,0 +1,46 @@
+﻿@using Nop.Core;
+@using Nop.Core.Infrastructure
+@using Nop.Web.Framework.Themes
+@using Nop.Web.Framework.UI
+@{
+    var supportRtl = EngineContext.Current.Resolve<IWorkContext>().WorkingLanguage.Rtl;
+    var themeName = EngineContext.Current.Resolve<IThemeContext>().WorkingThemeName;
+
+    //add browser specific CSS files
+    var browser = Request.Browser;
+    //if (browser.Browser == "IE" && browser.MajorVersion == 8)
+    //{
+    //todo remove if needed
+    //Html.AppendCssFileParts(string.Format("~/Themes/{0}/Content/css/ie8.css", themeName));
+    //}
+
+    //add main CSS file
+
+
+    if (supportRtl)
+    {
+        //todo remove if needed
+
+        // Html.AppendCssFileParts(string.Format("~/Themes/{0}/Content/css/styles.rtl.css", themeName));
+    }
+    else
+    {
+        //add bootstrap css
+        Html.AppendCssFileParts("~/Themes/newTheme/Content/css/bootstrap.css");
+        //add font awesome
+        Html.AppendCssFileParts("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+        //add css file
+        Html.AppendCssFileParts(string.Format("~/Themes/{0}/Content/css/styles.css", themeName));
+    }
+
+    //add jQuery UI css file
+    Html.AppendCssFileParts("~/Content/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.min.css");
+
+    //add js bootstrap js files files
+    Html.AddScriptParts("~/Scripts/bootstrap/bootstrap.js");
+    //if (browser.Browser == "IE" && browser.MajorVersion == 8)
+    //{
+    //    Html.AddScriptParts("~/Scripts/selectivizr.min.js");
+    //    Html.AddScriptParts("~/Scripts/respond.min.js");
+    //}
+}

@@ -1,0 +1,126 @@
+﻿@model ProductOverviewModel
+@using Nop.Core
+@using Nop.Core.Domain.Catalog
+@using Nop.Core.Domain.Orders
+@using Nop.Core.Domain.Tax
+@using Nop.Core.Infrastructure
+@using Nop.Web.Models.Catalog;
+@{
+    //prepare "Add to cart" AJAX link
+    string addtocartlink = "";
+    var shoppingCartTypeId = (int)ShoppingCartType.ShoppingCart;
+    var quantity = 1;
+    if (Model.ProductPrice.ForceRedirectionAfterAddingToCart)
+    {
+        addtocartlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity, forceredirection = Model.ProductPrice.ForceRedirectionAfterAddingToCart });
+    }
+    else
+    {
+        addtocartlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = shoppingCartTypeId, quantity = quantity });
+    }
+
+    var addtowishlistlink = Url.RouteUrl("AddProductToCart-Catalog", new { productId = Model.Id, shoppingCartTypeId = (int)ShoppingCartType.Wishlist, quantity = quantity });
+    var addtocomparelink = Url.RouteUrl("AddProductToCompare", new { productId = Model.Id });
+}
+
+
+<div class="card m-2 item-product" style="width: 12rem;">
+    <div class="top-header d-flex justify-content-around align-items-center">
+        <span class="price-old text-center text-uppercase">55 <i class="text-uppercase">EGP</i></span>
+        <span class="discount-percent text-center text-uppercase"><strong>-</strong>20%</span>
+    </div>
+    <img class="img d-block mx-auto card-img-top" src="https://d1thqefaqj0ct5.cloudfront.net/tires/103/mobile_image.png" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title text-capitalize product-title">product title</h5>
+        <p class="card-text product-decscription text-secondary text-lowercase">product description.</p>
+        <h4 class="card-text product-current-price  text-uppercase">50 <i class="text-uppercase">EGP</i></h4>
+        <p class="card-text product-delivery text-secondary text-lowercase">plus 25<i class="text-uppercase">EGP</i> Delivery.</p>
+        <a href="#" class="btn btn-block  add fab fa-opencart d-block"></a>
+
+    </div>
+    <div class="product-item-overlay">
+        <div class="prodcut-details-props bg-white">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th scope="row">prop1</th>
+                        <td>prop1 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop2</th>
+                        <td>prop2 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop3</th>
+                        <td>prop3 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop4</th>
+                        <td>prop4 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop5</th>
+                        <td>prop5 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop6</th>
+                        <td>prop6 desc</td>
+                    </tr>  <tr>
+                        <th scope="row">prop1</th>
+                        <td>prop1 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop2</th>
+                        <td>prop2 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop3</th>
+                        <td>prop3 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop4</th>
+                        <td>prop4 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop5</th>
+                        <td>prop5 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop6</th>
+                        <td>prop6 desc</td>
+                    </tr>  <tr>
+                        <th scope="row">prop1</th>
+                        <td>prop1 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop2</th>
+                        <td>prop2 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop3</th>
+                        <td>prop3 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop4</th>
+                        <td>prop4 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop5</th>
+                        <td>prop5 desc</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">prop6</th>
+                        <td>prop6 desc</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="d-block  btn see-details text-left text-capitalize">details</a>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
